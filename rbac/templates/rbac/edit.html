@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h3 class="page-header">编辑</h3>
+        <div class="col-md-6 col-md-offset-2">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div>
+                    {{ form.label }}
+                    {{ form }}
+                </div>
+                <input type="submit" value="提交"/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
