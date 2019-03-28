@@ -29,5 +29,5 @@ role-based access control（rbac）：指对于不同角色的用户，拥有不
   
       对于上述Employee的四个url，对其路由进行配置，然后实现对应的处理函数即可。
   
-  实现效果即简单过程参考：https://www.cnblogs.com/silence-cho/p/9781237.html
+  实现效果和简单过程参考：https://www.cnblogs.com/silence-cho/p/9781237.html
 
