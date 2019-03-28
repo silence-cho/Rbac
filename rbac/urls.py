@@ -5,6 +5,8 @@
 from django.conf.urls import url
 import views
 urlpatterns = [
+
+    url(r'^login/$', views.login),
     url(r'^user/$', views.listUser),
     url(r'^user/add/', views.addUser),
     url(r'^user/edit/(\d+)', views.editUser),

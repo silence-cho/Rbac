@@ -2,6 +2,8 @@
 from django.shortcuts import render,redirect
 import models
 from forms import UserForm,RoleForm
+import models
+from .service.permissions import initial_permission
 
 # Create your views here.
 
@@ -17,6 +19,20 @@ class PermissionAction(object):
 
     def delete_check(self):
         return 'delete' in self.actions
+
+def login(request):
+    if request.method=='POST':
+        name = request.POST.get('name')
+        passsword = request.POST.get('password')
+        # print name, passsword
+        user_obj = models.User.objects.filter(name=name,password=passsword).first()
+        if user_obj:
+            request.session['user']=user_obj.pk
+            initial_permission(request,user_obj)
+            return redirect('/user/')
+        else:
+            return render(request,'rbac/login.html')
+    return render(request, 'rbac/login.html')
 
 def listUser(request):
 
