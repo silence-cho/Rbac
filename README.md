@@ -7,6 +7,7 @@ role-based access control（rbac）：指对于不同角色的用户，拥有不
 
 #使用指南
   1. 配置Rbac app
+  
       将 Rbac app（整个Rbac文件夹）拷贝到自己的项目，在项目settings.py文件中注册app，然后进行数据库migrate,如下：
           
           #settings.py
@@ -16,6 +17,7 @@ role-based access control（rbac）：指对于不同角色的用户，拥有不
           python manage.py makemigrations
           python manage.py migrate
   2. 添加权限控制
+  
       登陆admin后台管理，为自己的数据添加权限（增删改查四条url），然后将权限赋予到不同角色。 如我的app01下面有一个Employee model,对应四个权限设置如下：
       
           查看职员     /app01/employee/
@@ -24,6 +26,7 @@ role-based access control（rbac）：指对于不同角色的用户，拥有不
           删除职员     /app01/employee/delete/(\d+)  
   
   3. 实现自己的增删改查函数
+  
       对于上述Employee的四个url，对其路由进行配置，然后实现对应的处理函数即可。
   
   实现效果即简单过程参考：https://www.cnblogs.com/silence-cho/p/9781237.html
